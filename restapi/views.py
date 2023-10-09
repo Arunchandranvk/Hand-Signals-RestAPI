@@ -94,10 +94,7 @@ class ImageClassificationView(APIView):
     parser_classes = (MultiPartParser,)
 
     def post(self, request):
-        # Your image classification logic here (similar to your original code)
-        # You can use request.data['image'] to access the uploaded image file
-
-        # Example:
+        
         img = cv2.imdecode(np.fromstring(request.data['image'].read(), np.uint8), cv2.IMREAD_COLOR)
 
         detector = HandDetector(maxHands=1)
